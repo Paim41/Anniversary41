@@ -125,12 +125,7 @@ function autoMusic(){
    TYPEWRITER — anniversary phrases
    ============================================================ */
 var PHRASES = [
-  'Happy Anniversary Sayang',
-  'You Are My Everything',
   'I Love You So Much',
-  'Stay Beautiful Always',
-  'Forever In My Heart',
-  'Every Day With You'
 ];
 
 var twI = 0;
