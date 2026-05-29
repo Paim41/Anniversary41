@@ -95,7 +95,14 @@ html,body{width:100%;min-height:100%;overflow-x:hidden;background:#000;font-fami
 
 /* ── HEADLINE ── */
 #HW{width:100%;text-align:center;min-height:64px;display:none;align-items:center;justify-content:center;}
-#HL{font-family:var(--fs);font-size:clamp(2rem,6vw,3.8rem);color:#fff;text-shadow:0 0 20px var(--gold),0 0 40px var(--goldg);}
+#HL{
+  font-family:var(--fs);
+  font-size:clamp(2rem,6vw,3.8rem);
+  color:#ffffff;
+  text-shadow:
+    0 0 6px rgba(255,255,255,0.7),
+    0 0 15px rgba(255,215,0,0.4);
+}
 .cur{display:inline-block;width:2px;height:.85em;background:var(--gold);margin-left:2px;vertical-align:middle;animation:bl .7s step-end infinite;box-shadow:0 0 8px var(--gold);}
 @keyframes bl{0%,100%{opacity:1}50%{opacity:0}}
 
