@@ -127,11 +127,33 @@ function autoMusic(){
 var PHRASES=['Happy Anniversary Sayang','You Are My Everything','I Love You So Much','Stay Beautiful Always','Forever In My Heart','Every Day With You'];
 var twI=0,twC=0,twD=false,hlEl=document.getElementById('HL');
 function typeWrite(){
-  var cur=PHRASES[twI%PHRASES.length];
-  hlEl.innerHTML=(twD?cur.slice(0,twC--):cur.slice(0,twC++))+'<span class="cur"></span>';
-  if(!twD&&twC>cur.length){setTimeout(function(){twD=true;},2200);return setTimeout(typeWrite,90);}
-  if(twD&&twC<0){twD=false;twI++;return setTimeout(typeWrite,500);}
-  setTimeout(typeWrite,twD?38:85);
+  let cur = PHRASES[twI % PHRASES.length];
+
+  hlEl.innerHTML = cur.slice(0, twC) + '<span class="cur"></span>';
+
+  if (!twD) {
+    twC++;
+
+    if (twC > cur.length) {
+      twD = true;
+      setTimeout(typeWrite, 1200); // pause at full text
+      return;
+    }
+
+    setTimeout(typeWrite, 80);
+  } 
+  else {
+    twC--;
+
+    if (twC < 0) {
+      twD = false;
+      twI++;
+      setTimeout(typeWrite, 300);
+      return;
+    }
+
+    setTimeout(typeWrite, 40);
+  }
 }
 
 /* ============================================================
