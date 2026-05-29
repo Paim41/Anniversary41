@@ -96,11 +96,6 @@ html,body{width:100%;min-height:100%;overflow-x:hidden;background:#000;font-fami
 /* ── HEADLINE ── */
 #HW{width:100%;text-align:center;min-height:64px;display:none;align-items:center;justify-content:center;}
 #HL{
-    opacity:1 !important;
-  filter: none !important;
-  transform: none !important;
-  will-change: auto;
-}
   font-family:var(--fs);
   font-size:clamp(2rem,6vw,3.8rem);
   color:#ffffff;
