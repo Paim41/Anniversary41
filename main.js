@@ -124,14 +124,29 @@ function autoMusic(){
 /* ============================================================
    TYPEWRITER — anniversary phrases
    ============================================================ */
-var PHRASES=['Happy Anniversary Sayang','You Are My Everything','I Love You So Much','Stay Beautiful Always','Forever In My Heart','Every Day With You'];
-var twI=0,twC=0,twD=false,hlEl=document.getElementById('HL');
-function typeWrite(){
+var PHRASES = [
+  'Happy Anniversary Sayang',
+  'You Are My Everything',
+  'I Love You So Much',
+  'Stay Beautiful Always',
+  'Forever In My Heart',
+  'Every Day With You'
+];
+
+var twI = 0;
+var twC = 0;
+var twD = false;
+
+var hlEl = document.getElementById('HL');
+
+function typeWrite() {
   let cur = PHRASES[twI % PHRASES.length];
 
+  // render text
   hlEl.innerHTML = cur.slice(0, twC) + '<span class="cur"></span>';
 
   if (!twD) {
+    // typing forward
     twC++;
 
     if (twC > cur.length) {
@@ -143,19 +158,19 @@ function typeWrite(){
     setTimeout(typeWrite, 80);
   } 
   else {
+    // deleting
     twC--;
 
     if (twC < 0) {
       twD = false;
       twI++;
-      setTimeout(typeWrite, 300);
+      setTimeout(typeWrite, 300); // pause before next phrase
       return;
     }
 
     setTimeout(typeWrite, 40);
   }
 }
-
 /* ============================================================
    START
    ============================================================ */
