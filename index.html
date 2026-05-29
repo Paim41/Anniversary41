@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<title>Happy Anniversary Sayang</title>
+<link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Special+Elite&family=Cinzel:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Anti-devtools protection -->
+<script>
+(function(){
+  document.addEventListener('contextmenu',function(e){e.preventDefault();});
+  document.addEventListener('keydown',function(e){
+    if(e.key==='F12'||(e.ctrlKey&&e.shiftKey&&'IJCK'.includes(e.key))||(e.ctrlKey&&'US'.includes(e.key))){e.preventDefault();return false;}
+  });
+  setInterval(function(){
+    var d=(window.outerWidth-window.innerWidth>160)||(window.outerHeight-window.innerHeight>160);
+    document.body.style.filter=d?'blur(30px)':'';
+    document.body.style.pointerEvents=d?'none':'';
+  },900);
+})();
+</script>
+
+<!-- Loading -->
+<div id="LS">
+  <div class="bunny-container">
+    <div class="text"></div>
+    <div class="grass"></div>
+    <div class="bunny">
+      <div class="bunny__ears">
+        <div class="bunny__ear bunny__ear--left"></div>
+        <div class="bunny__ear bunny__ear--right"></div>
+      </div>
+      <div class="bunny__feet">
+        <div class="bunny__foot bunny__foot--left"></div>
+        <div class="bunny__foot bunny__foot--right"></div>
+      </div>
+      <div class="bunny__tail"></div>
+      <div class="bunny__paw"></div>
+      <div class="bunny__body">
+        <div class="bunny__eyes"></div>
+        <div class="bunny__nose"></div>
+        <div class="bunny__cheeks"></div>
+        <div class="bunny__mouth"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Music -->
+<div id="MB" onclick="toggleMusic()" title="Play / Pause">
+  <svg id="IP" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+  <svg id="IPA" viewBox="0 0 24 24" style="display:none"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
+</div>
+
+<canvas id="RC"></canvas>
+
+<!-- Countdown -->
+<div id="CD">
+  <canvas id="CDC"></canvas>
+  <div id="CDN">3</div>
+  <div id="CDL">get ready...</div>
+</div>
+
+<!-- Anniversary Words (dot-matrix) -->
+<div id="HBW">
+  <canvas id="HBBC"></canvas>
+  <canvas id="HBC"></canvas>
+</div>
+
+<!-- Reveal screen -->
+<div id="RV">
+  <canvas id="RVC2"></canvas>
+  <div id="RVM">
+    <div id="RVT">Happy Anniversary</div>
+    <div id="RVN">Sayang</div>
+    <div id="RVS">Every moment with you is my favourite memory.</div>
+    <button id="RVBTN" onclick="showBook()">Open Your Gift</button>
+  </div>
+</div>
+
+<!-- Main content -->
+<div id="MC">
+
+  <!-- Welcome card -->
+  <div id="WC">
+    <h1>Happy Anniversary Sayang!</h1>
+    <button class="bb" onclick="startExp()">
+      <svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>Begin
+    </button>
+  </div>
+
+  <!-- Typewriter headline -->
+  <div id="HW"><div id="HL"></div></div>
+
+  <!-- Scrapbook flipbook -->
+  <div id="BS">
+    <div id="book-wrap">
+      <div id="flipbook">
+        <!-- Hard front cover -->
+        <div class="hard">
+          <div class="cover-inner">
+            <div class="cover-rings">
+              <svg viewBox="0 0 24 24"><circle cx="9" cy="12" r="7"/><circle cx="15" cy="12" r="7"/></svg>
+            </div>
+            <div class="cover-title">Our Story</div>
+            <div class="cover-sub">A scrapbook of us</div>
+          </div>
+        </div>
+        <!-- Hard front cover inside (blank) -->
+        <div class="hard"></div>
+        <!-- Content pages are injected here by JS (buildFlipbook in main.js) -->
+        <!-- Hard back cover inside (blank) -->
+        <div class="hard"></div>
+        <!-- Hard back cover -->
+        <div class="hard">
+          <div class="cover-inner">
+            <div class="cover-heart">
+              <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </div>
+            <div class="cover-title">The End</div>
+            <div class="cover-sub">Thank you for being mine</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Love Gallery -->
+  <div id="LG">
+    <div class="lg-title">My Love For You</div>
+    <div id="LW"></div>
+    <div class="lg-msg">Happy Anniversary Sayang!</div>
+  </div>
+
+</div>
+
+<!-- Libraries (do not edit) -->
+<script src="jquery.min.js"></script>
+<script src="turn.js"></script>
+
+<!-- Your app logic — edit main.js to change photos, captions, text -->
+<script src="main.js"></script>
+
+<!-- GitHub Footer -->
+<a href="https://github.com/Paim41" target="_blank" rel="noopener" style="
+    position: fixed;
+    bottom: 18px;
+    right: 22px;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    background: rgba(255,255,255,0.92);
+    border: 1.5px solid var(--red-light, #FADBD8);
+    border-radius: 50px;
+    padding: 7px 16px 7px 10px;
+    box-shadow: 0 4px 18px rgba(139,0,0,0.13);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.92em;
+    color: #B98B14;
+    letter-spacing: 0.5px;
+    transition: box-shadow 0.25s, transform 0.25s;
+" onmouseover="this.style.transform='translateY(-3px)';this.style.boxShadow='0 8px 28px rgba(139,0,0,0.22)'"
+   onmouseout="this.style.transform='';this.style.boxShadow='0 4px 18px rgba(139,0,0,0.13)'">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="#B98B14" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
+    </svg>
+    @Paim41
+</a>
+
+</body>
+</html>
